@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SecuredController {
 
-    @GetMapping
-    public String getGreeting(@RequestBody String greeting) {
-        return "Hello world";
+    @GetMapping("/private")
+    public String getSecured(@RequestBody String greeting) {
+        return "Secured private";
+    }
+
+    @GetMapping("/public")
+    public String getMessage() {
+        return "Hello from public API controller";
     }
 }
